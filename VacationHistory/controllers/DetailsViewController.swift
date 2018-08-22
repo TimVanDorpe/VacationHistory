@@ -29,8 +29,9 @@ class DetailsViewController:UIViewController{
             
             warning.text = "No warnings"
             let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:LocationController.deviceLocation())
+            let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.deviceLocation().latitude, longitude:LocationController.deviceLocation().longitude)
             //add building met behulp van buildingscontroller
-            BuildingsController.addBuilding(building: newMapPin)
+            BuildingsController.addBuilding(building: newBuilding)
             //DatabaseController.saveContext()
             self.dismiss(animated: true, completion: nil)
         }

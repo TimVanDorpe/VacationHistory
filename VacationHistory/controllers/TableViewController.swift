@@ -34,8 +34,8 @@ class TableViewController: UITableViewController{
         
         let buildingsArray:Array = BuildingsController.sharedBuildings()
         
-        let building:MapPin = buildingsArray[indexPath.row] as! MapPin
-        cell.textLabel?.text = building.title
+        let building:Building = buildingsArray[indexPath.row] as! Building
+        cell.textLabel?.text = building.name
         
         return cell
     }
@@ -72,6 +72,8 @@ class TableViewController: UITableViewController{
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+
 extension ViewController: UITableViewDelegate {
     
 }

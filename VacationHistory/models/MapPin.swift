@@ -1,3 +1,4 @@
+
 //
 //  MapPin.swift
 //  VacationHistory
@@ -5,7 +6,6 @@
 //  Created by Tim Van Dorpe on 19/08/18.
 //  Copyright © 2018 Tim Van Dorpe. All rights reserved.
 //
-
 import Foundation
 import MapKit
 class MapPin: NSObject, MKAnnotation {
