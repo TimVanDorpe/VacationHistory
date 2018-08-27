@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 import MapKit
+import RealmSwift
 class DetailsViewController:UIViewController{
+    
+    var buildings : Results<Building>!
+
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descfield: UITextView!
@@ -19,6 +23,10 @@ class DetailsViewController:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let realm = RealmService.shared.realm
+        
+        buildings = realm.objects(Building.self)
+        
     }
     @IBAction func saveAction(_ sender: Any) {
         //Hier haal ik de data uit de textfields
@@ -28,11 +36,13 @@ class DetailsViewController:UIViewController{
         if(nameString != ""){
             
             warning.text = "No warnings"
+            
             let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:LocationController.deviceLocation())
+            //add the mappin
+            NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)
             let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.deviceLocation().latitude, longitude:LocationController.deviceLocation().longitude)
-            //add building met behulp van buildingscontroller
-            BuildingsController.addBuilding(building: newBuilding)
-            //DatabaseController.saveContext()
+            
+            RealmService.shared.create(newBuilding)
             self.dismiss(animated: true, completion: nil)
         }
         else{

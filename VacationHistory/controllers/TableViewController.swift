@@ -7,13 +7,24 @@
 //
 
 import Foundation
-
+import RealmSwift
 import UIKit
 
 class TableViewController: UITableViewController{
+    var buildings : Results<Building>!
+    var notificationToken : NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let realm = RealmService.shared.realm
+        
+        buildings = realm.objects(Building.self)
+        notificationToken = realm.observe{
+            (notification, realm) in
+        self.tableView.reloadData()
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(forName: BuildingsController.BUILDING_ADDED_NOTIFICATION, object: nil , queue: nil)
         {
@@ -21,20 +32,22 @@ class TableViewController: UITableViewController{
             self.tableView.reloadData()
             
         }
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BuildingsController.sharedBuildings().count
+        return buildings.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
-        let buildingsArray:Array = BuildingsController.sharedBuildings()
         
-        let building:Building = buildingsArray[indexPath.row] as! Building
+        //let buildingsArray:Array = BuildingsController.sharedBuildings()
+        
+        let building:Building = buildings[indexPath.row] as! Building
         cell.textLabel?.text = building.name
         
         return cell
@@ -57,13 +70,14 @@ class TableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         //guard editingStyle == .delete else { return }
-        if (editingStyle == .delete)
+        /*if (editingStyle == .delete)
         {
-            
-        }
-        /*let pickUpLine = pickUpLines[indexPath.row]
-         
-         RealmService.shared.delete(pickUpLine)*/
+            return
+        }*/
+        guard editingStyle == .delete else { return }
+        let building = buildings[indexPath.row]
+        
+        RealmService.shared.delete(building)
     }
     
     
