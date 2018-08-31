@@ -19,6 +19,7 @@ class DetailsViewController:UIViewController{
     @IBOutlet weak var descfield: UITextView!
     
     
+    
     @IBOutlet weak var warning: UILabel!
     
     override func viewDidLoad() {
@@ -43,6 +44,7 @@ class DetailsViewController:UIViewController{
             let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.deviceLocation().latitude, longitude:LocationController.deviceLocation().longitude)
             
             RealmService.shared.create(newBuilding)
+            buildings = buildings.sorted(byKeyPath: "name", ascending: true)
             self.dismiss(animated: true, completion: nil)
         }
         else{

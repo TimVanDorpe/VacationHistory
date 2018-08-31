@@ -10,6 +10,7 @@
 		9BFEE42F77FE8A3C568A9A79 /* Pods_VacationHistoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80661DA97E20CE60A4BB4CA2 /* Pods_VacationHistoryTests.framework */; };
 		A3E891DEF82EABFDC570CFEB /* Pods_VacationHistory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6308160A21D7915F77917556 /* Pods_VacationHistory.framework */; };
 		B3DD37605D6CBFC9D7CF8F21 /* Pods_VacationHistoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA6348932FE79D541C8080 /* Pods_VacationHistoryUITests.framework */; };
+		E201E48F21394E7100386473 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201E48E21394E7100386473 /* AlertService.swift */; };
 		E24B64DA2129BC5C009DC702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B64D92129BC5C009DC702 /* AppDelegate.swift */; };
 		E24B64DC2129BC5C009DC702 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B64DB2129BC5C009DC702 /* ViewController.swift */; };
 		E24B64DF2129BC5C009DC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24B64DD2129BC5C009DC702 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		A595D0C85E6FC1D7B335AEFF /* Pods-VacationHistoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationHistoryTests.debug.xcconfig"; path = "Target Support Files/Pods-VacationHistoryTests/Pods-VacationHistoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7FA4F651211D703A95F962B /* Pods-VacationHistory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationHistory.release.xcconfig"; path = "Target Support Files/Pods-VacationHistory/Pods-VacationHistory.release.xcconfig"; sourceTree = "<group>"; };
 		DD7957FC11790B7B84ACED92 /* Pods-VacationHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationHistory.debug.xcconfig"; path = "Target Support Files/Pods-VacationHistory/Pods-VacationHistory.debug.xcconfig"; sourceTree = "<group>"; };
+		E201E48E21394E7100386473 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		E24B64D62129BC5C009DC702 /* VacationHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacationHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24B64D92129BC5C009DC702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24B64DB2129BC5C009DC702 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				E24B64D92129BC5C009DC702 /* AppDelegate.swift */,
 				E24B64DB2129BC5C009DC702 /* ViewController.swift */,
 				E24B64DD2129BC5C009DC702 /* Main.storyboard */,
+				E201E48E21394E7100386473 /* AlertService.swift */,
 				E24B64E02129BC5C009DC702 /* Assets.xcassets */,
 				E24B64E22129BC5C009DC702 /* LaunchScreen.storyboard */,
 				E24B64E52129BC5C009DC702 /* Info.plist */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E201E48F21394E7100386473 /* AlertService.swift in Sources */,
 				E24B65102129C4D5009DC702 /* MapPin.swift in Sources */,
 				E24B65182129C5A3009DC702 /* TableViewController.swift in Sources */,
 				E24B65122129C50C009DC702 /* BuildingsController.swift in Sources */,

@@ -38,6 +38,7 @@ class RealmService {
         }
     }
     
+    
     func delete<T: Object>(_ object: T) {
         do {
             try realm.write {

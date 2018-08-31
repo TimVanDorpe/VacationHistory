@@ -20,6 +20,7 @@ class TableViewController: UITableViewController{
         let realm = RealmService.shared.realm
         
         buildings = realm.objects(Building.self)
+        buildings = buildings.sorted(byKeyPath: "name", ascending: true)
         notificationToken = realm.observe{
             (notification, realm) in
         self.tableView.reloadData()
@@ -57,23 +58,17 @@ class TableViewController: UITableViewController{
         //update
         
         print("selected")
-        /*let pickUpLine = pickUpLines[indexPath.row]
-         
-         AlertService.updateAlert(in: self, pickUpLine: pickUpLine) { (line, score, email) in
-         let dict: [String: Any?] = ["line": line,
-         "score": score,
-         "email": email]
-         
-         RealmService.shared.update(pickUpLine, with: dict)
-         }*/
+        let building = buildings[indexPath.row]
+        
+        AlertService.updateAlert(in: self, building:building) { (name, desc) in
+            let dict: [String: Any?] = ["name": name,
+                                        "desscription": desc]
+            RealmService.shared.update(building, with: dict)
+        }
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        //guard editingStyle == .delete else { return }
-        /*if (editingStyle == .delete)
-        {
-            return
-        }*/
+        
         guard editingStyle == .delete else { return }
         let building = buildings[indexPath.row]
         

@@ -38,12 +38,6 @@ public class ViewController: UIViewController {
             self.mapView.addAnnotation(newBuildingPin)
             
         }
-        //results ophalen en ze op de map plaatsen
-        //let buildingsArray:Array = BuildingsController.sharedBuildings()
-        
-       
-        
-        
             for(_, currentObject) in buildings.enumerated(){
                 let building:Building = currentObject as! Building
                 let buildingPin:MapPin = MapPin(title: building.name , subtitle : building.desscription! , coordinate : CLLocationCoordinate2DMake(CLLocationDegrees(building.latitude), CLLocationDegrees(building.longitude)))
@@ -51,8 +45,10 @@ public class ViewController: UIViewController {
                 
             }
         
+         
+        
         //de map wordt overzichtelijker , 2000 span instellen
-        let distanceSpan:CLLocationDegrees = 2000
+        let distanceSpan:CLLocationDegrees = 8000
         let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
         if(startLocation != nil){
             mapView.setRegion(MKCoordinateRegionMakeWithDistance(startLocation, distanceSpan, distanceSpan), animated: true)
