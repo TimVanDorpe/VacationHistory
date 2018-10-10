@@ -48,8 +48,9 @@ public class ViewController: UIViewController {
          
         
         //de map wordt overzichtelijker , 2000 span instellen
-        let distanceSpan:CLLocationDegrees = 8000
-        let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
+        let distanceSpan:CLLocationDegrees = 400000
+        //let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
+        let startLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(51.05), CLLocationDegrees(3.7167))
         if(startLocation != nil){
             mapView.setRegion(MKCoordinateRegionMakeWithDistance(startLocation, distanceSpan, distanceSpan), animated: true)
         }

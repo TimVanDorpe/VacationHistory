@@ -53,10 +53,10 @@ class TableViewController: UITableViewController{
         
         return cell
     }
-    
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //update
-        
+       
         print("selected")
         let building = buildings[indexPath.row]
         
@@ -66,7 +66,21 @@ class TableViewController: UITableViewController{
             RealmService.shared.update(building, with: dict)
         }
     }
-
+    */
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ListDetailSegue" {
+            let selectedIndex_ = self.tableView.indexPath(for: sender as! UITableViewCell)
+        let destinationViewController = segue.destination as?
+        
+            
+        ListDetailViewController
+            destinationViewController?.building = buildings[(selectedIndex_?.row)!]
+                //Building(name: "Test", desscription: "Test", latitude: 0.00, longitude: 0.00)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         guard editingStyle == .delete else { return }
