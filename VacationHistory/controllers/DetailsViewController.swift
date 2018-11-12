@@ -14,10 +14,12 @@ class DetailsViewController:UIViewController{
     
     var buildings : Results<Building>!
 
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descfield: UITextView!
     
+    @IBAction func cancel(_ sender: UIButton) {
+         self.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBOutlet weak var warning: UILabel!
@@ -39,6 +41,7 @@ class DetailsViewController:UIViewController{
             warning.text = "No warnings"
             
             let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:LocationController.deviceLocation())
+            
             //add the mappin
             NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)
             let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.deviceLocation().latitude, longitude:LocationController.deviceLocation().longitude)

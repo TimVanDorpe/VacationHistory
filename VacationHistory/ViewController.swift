@@ -39,7 +39,7 @@ public class ViewController: UIViewController {
             
         }
             for(_, currentObject) in buildings.enumerated(){
-                let building:Building = currentObject as! Building
+                let building:Building = currentObject;
                 let buildingPin:MapPin = MapPin(title: building.name , subtitle : building.desscription! , coordinate : CLLocationCoordinate2DMake(CLLocationDegrees(building.latitude), CLLocationDegrees(building.longitude)))
                 mapView.addAnnotation(buildingPin)
                 
@@ -52,7 +52,7 @@ public class ViewController: UIViewController {
         //let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
         let startLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(51.05), CLLocationDegrees(3.7167))
         if(startLocation != nil){
-            mapView.setRegion(MKCoordinateRegionMakeWithDistance(startLocation, distanceSpan, distanceSpan), animated: true)
+            mapView.setRegion(MKCoordinateRegion.init(center: startLocation, latitudinalMeters: distanceSpan, longitudinalMeters: distanceSpan), animated: true)
         }
      
     }

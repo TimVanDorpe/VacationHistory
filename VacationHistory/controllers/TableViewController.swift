@@ -48,7 +48,7 @@ class TableViewController: UITableViewController{
         
         //let buildingsArray:Array = BuildingsController.sharedBuildings()
         
-        let building:Building = buildings[indexPath.row] as! Building
+        let building:Building = buildings[indexPath.row] 
         cell.textLabel?.text = building.name
         
         return cell
@@ -71,17 +71,15 @@ class TableViewController: UITableViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ListDetailSegue" {
-            let selectedIndex_ = self.tableView.indexPath(for: sender as! UITableViewCell)
+        let selectedIndex_ = self.tableView.indexPath(for: sender as! UITableViewCell)
         let destinationViewController = segue.destination as?
-        
-            
         ListDetailViewController
             destinationViewController?.building = buildings[(selectedIndex_?.row)!]
-                //Building(name: "Test", desscription: "Test", latitude: 0.00, longitude: 0.00)
+            
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         guard editingStyle == .delete else { return }
         let building = buildings[indexPath.row]
