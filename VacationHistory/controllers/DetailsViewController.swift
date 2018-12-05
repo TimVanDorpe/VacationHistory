@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import MapKit
 import RealmSwift
+import CoreLocation
 class DetailsViewController:UIViewController{
     
     var buildings : Results<Building>!
+    let locationManager = CLLocationManager()
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descfield: UITextView!
@@ -30,7 +32,9 @@ class DetailsViewController:UIViewController{
         
         buildings = realm.objects(Building.self)
         
+        
     }
+  
     @IBAction func saveAction(_ sender: Any) {
         //Hier haal ik de data uit de textfields
         let nameString:String = nameField.text!
@@ -40,11 +44,20 @@ class DetailsViewController:UIViewController{
             
             warning.text = "No warnings"
             
-            let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:LocationController.deviceLocation())
             
-            //add the mappin
+            //add new building hard code
+           
+            
+            //end hard code
+            
+           
+            let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0)))
+            
+            //add the mappin to the map
             NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)
-            let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.deviceLocation().latitude, longitude:LocationController.deviceLocation().longitude)
+            
+            //make newbuilding with given data
+            let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.currentLocation?.coordinate.latitude ?? 0, longitude:LocationController.currentLocation?.coordinate.longitude ?? 0)
             
             RealmService.shared.create(newBuilding)
             buildings = buildings.sorted(byKeyPath: "name", ascending: true)

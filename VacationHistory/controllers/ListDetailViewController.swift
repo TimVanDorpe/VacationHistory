@@ -17,13 +17,14 @@ class ListDetailViewController: UIViewController{
         
     }
     
+    @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     
     var building: Building!
     override func viewDidLoad() {
    
         lblTitle.text = building.name
-        
+        lblDescription.text = String("longitude : \(building.longitude)")
     }
     
     

@@ -32,6 +32,7 @@ public class ViewController: UIViewController {
             //handle error
             print(error ?? "no error detected")
         }
+       
         
         NotificationCenter.default.addObserver(forName: BuildingsController.BUILDING_ADDED_NOTIFICATION, object: nil , queue: nil){notification in
             let newBuildingPin:MapPin = notification.object as! MapPin
