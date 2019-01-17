@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Permission to get acces to your photo roll</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Please give persmission to your location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Acces for using the photo library</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>You location is in use</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -42,6 +46,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Acces to camera</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

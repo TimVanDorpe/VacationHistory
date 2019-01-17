@@ -51,7 +51,7 @@ class DetailsViewController:UIViewController{
             //end hard code
             
            
-            let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0)))
+            let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0)))
             
             //add the mappin to the map
             NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)

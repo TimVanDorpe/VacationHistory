@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import UIKit
+import MapKit
 
 class TableViewController: UITableViewController{
     var buildings : Results<Building>!
@@ -53,8 +54,8 @@ class TableViewController: UITableViewController{
         
         return cell
     }
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //update
        
         print("selected")
@@ -65,8 +66,8 @@ class TableViewController: UITableViewController{
                                         "desscription": desc]
             RealmService.shared.update(building, with: dict)
         }
-    }
-    */
+    }*/
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,6 +86,7 @@ class TableViewController: UITableViewController{
         let building = buildings[indexPath.row]
         
         RealmService.shared.delete(building)
+        
     }
     
     

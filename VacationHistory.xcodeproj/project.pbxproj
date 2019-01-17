@@ -12,6 +12,8 @@
 		B3DD37605D6CBFC9D7CF8F21 /* Pods_VacationHistoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CBA6348932FE79D541C8080 /* Pods_VacationHistoryUITests.framework */; };
 		E201E48F21394E7100386473 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E201E48E21394E7100386473 /* AlertService.swift */; };
 		E21A3971216E2F4300F3DC9E /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21A3970216E2F4300F3DC9E /* ListDetailViewController.swift */; };
+		E21D6EB321CD30BF00FA160D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D6EB221CD30BF00FA160D /* CollectionViewCell.swift */; };
+		E21D6EB521CD314400FA160D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21D6EB421CD314400FA160D /* CollectionViewController.swift */; };
 		E24B64DA2129BC5C009DC702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B64D92129BC5C009DC702 /* AppDelegate.swift */; };
 		E24B64DC2129BC5C009DC702 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B64DB2129BC5C009DC702 /* ViewController.swift */; };
 		E24B64DF2129BC5C009DC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E24B64DD2129BC5C009DC702 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		E24B65142129C54C009DC702 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65132129C54C009DC702 /* LocationController.swift */; };
 		E24B65162129C577009DC702 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65152129C577009DC702 /* DetailsViewController.swift */; };
 		E24B65182129C5A3009DC702 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65172129C5A3009DC702 /* TableViewController.swift */; };
+		E2DE897D21BED75B00DB2FE8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */; };
+		E2DE898321C560FA00DB2FE8 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */; };
 		E2F22403212DACA100E263A2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F22404212DACA100E263A2 /* RealmSwift.framework */; };
 		E2F22406212DB15D00E263A2 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F22405212DB15D00E263A2 /* Building.swift */; };
 		E2F22408212DB93200E263A2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F22407212DB93200E263A2 /* RealmService.swift */; };
@@ -58,6 +62,8 @@
 		DD7957FC11790B7B84ACED92 /* Pods-VacationHistory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VacationHistory.debug.xcconfig"; path = "Target Support Files/Pods-VacationHistory/Pods-VacationHistory.debug.xcconfig"; sourceTree = "<group>"; };
 		E201E48E21394E7100386473 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		E21A3970216E2F4300F3DC9E /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		E21D6EB221CD30BF00FA160D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E21D6EB421CD314400FA160D /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E24B64D62129BC5C009DC702 /* VacationHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacationHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E24B64D92129BC5C009DC702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E24B64DB2129BC5C009DC702 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 		E24B65132129C54C009DC702 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		E24B65152129C577009DC702 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E24B65172129C5A3009DC702 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		E2F22404212DACA100E263A2 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F22405212DB15D00E263A2 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		E2F22407212DB93200E263A2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -200,11 +208,15 @@
 		E24B650D2129C4B4009DC702 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E21D6EB221CD30BF00FA160D /* CollectionViewCell.swift */,
 				E24B65112129C50C009DC702 /* BuildingsController.swift */,
 				E24B65132129C54C009DC702 /* LocationController.swift */,
 				E24B65152129C577009DC702 /* DetailsViewController.swift */,
 				E24B65172129C5A3009DC702 /* TableViewController.swift */,
 				E21A3970216E2F4300F3DC9E /* ListDetailViewController.swift */,
+				E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */,
+				E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */,
+				E21D6EB421CD314400FA160D /* CollectionViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -454,7 +466,11 @@
 				E24B65102129C4D5009DC702 /* MapPin.swift in Sources */,
 				E24B65182129C5A3009DC702 /* TableViewController.swift in Sources */,
 				E21A3971216E2F4300F3DC9E /* ListDetailViewController.swift in Sources */,
+				E21D6EB521CD314400FA160D /* CollectionViewController.swift in Sources */,
 				E24B65122129C50C009DC702 /* BuildingsController.swift in Sources */,
+				E21D6EB321CD30BF00FA160D /* CollectionViewCell.swift in Sources */,
+				E2DE897D21BED75B00DB2FE8 /* GalleryViewController.swift in Sources */,
+				E2DE898321C560FA00DB2FE8 /* AddPhotoViewController.swift in Sources */,
 				E24B64DC2129BC5C009DC702 /* ViewController.swift in Sources */,
 				E2F22408212DB93200E263A2 /* RealmService.swift in Sources */,
 				E2F2240B212DCC1600E263A2 /* DVCell.swift in Sources */,
