@@ -16,6 +16,7 @@ class DetailsViewController:UIViewController{
     var buildings : Results<Building>!
     let locationManager = CLLocationManager()
 
+    @IBOutlet weak var ratingStackView: RatingController!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descfield: UITextView!
     
@@ -41,24 +42,12 @@ class DetailsViewController:UIViewController{
         let descriptionString:String = descfield.text!
         warning.textColor = UIColor.red        
         if(nameString != ""){
-            
-            warning.text = "No warnings"
-            
-            
-            //add new building hard code
-           
-            
-            //end hard code
-            
-           
-            let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0)))
-            
+         let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0)))
             //add the mappin to the map
             NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)
-            
             //make newbuilding with given data
             let newBuilding:Building = Building(name: nameString , desscription: descriptionString , latitude:LocationController.currentLocation?.coordinate.latitude ?? 0, longitude:LocationController.currentLocation?.coordinate.longitude ?? 0)
-            
+            newBuilding.rating = ratingStackView.starsRating
             RealmService.shared.create(newBuilding)
             buildings = buildings.sorted(byKeyPath: "name", ascending: true)
             self.dismiss(animated: true, completion: nil)

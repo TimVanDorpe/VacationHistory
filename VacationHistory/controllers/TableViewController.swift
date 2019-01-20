@@ -11,6 +11,7 @@ import RealmSwift
 import UIKit
 import MapKit
 
+
 class TableViewController: UITableViewController{
     var buildings : Results<Building>!
     var notificationToken : NotificationToken?
@@ -19,7 +20,6 @@ class TableViewController: UITableViewController{
         super.viewDidLoad()
         
         let realm = RealmService.shared.realm
-        
         buildings = realm.objects(Building.self)
         buildings = buildings.sorted(byKeyPath: "name", ascending: true)
         notificationToken = realm.observe{
@@ -36,11 +36,16 @@ class TableViewController: UITableViewController{
         }
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) 
+        
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
+        
         return buildings.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,6 +56,7 @@ class TableViewController: UITableViewController{
         
         let building:Building = buildings[indexPath.row] 
         cell.textLabel?.text = building.name
+
         
         return cell
     }

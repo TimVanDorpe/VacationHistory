@@ -12,33 +12,57 @@ class AddPhotoViewController: UIViewController , UIImagePickerControllerDelegate
     var building : Building!
   
     
+    @IBOutlet weak var lblWarning: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.lblWarning.text = ""
 
         // Do any additional setup after loading the view.
     }
     @IBAction func backtogallery(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+         performSegue(withIdentifier: "gobacksegue", sender: self)
+      
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gobacksegue" {
+            
+            let destinationViewController = segue.destination as? CollectionViewController
+            destinationViewController?.building = building
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
     @IBAction func savepicture(_ sender: Any) {
-        let imageData = imageView.image!.pngData()
-        let compresedImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
         
-        saveImage(imageName: String("\(building.name ?? "none")\(building.countPhotos)"))
+        if (imageView.image == nil )
+        {
+            self.lblWarning.text = "You have to add an photo first, before saving it !"
+        }
+        else{
+            
+            let imageData = imageView.image!.pngData()
+            let compresedImage = UIImage(data: imageData!)
+            UIImageWriteToSavedPhotosAlbum(compresedImage!, nil, nil, nil)
         
-        let buildingcount = building.countPhotos + 1
-        let dict: [String: Any?] = ["countPhotos": buildingcount]
-        RealmService.shared.update(building, with: dict)
+            saveImage(imageName: String("\(building.name ?? "none")\(building.countPhotos)"))
         
-        let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+            let buildingcount = building.countPhotos + 1
+            let dict: [String: Any?] = ["countPhotos": buildingcount]
+            RealmService.shared.update(building, with: dict)
+        
+            let alert = UIAlertController(title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+    
     }
     @IBAction func selectpicture(_ sender: Any) {
+         self.lblWarning.text = ""
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -69,20 +93,18 @@ class AddPhotoViewController: UIViewController , UIImagePickerControllerDelegate
     
   
     func saveImage(imageName: String){
-        //create an instance of the FileManager
         let fileManager = FileManager.default
         //get the image path
         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
-        //get the image we took with camera
+       
         let image = imageView.image!
-        //get the PNG data for this image
         let data = image.pngData()
-        //store it in the document directory
+       
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         print(imagePath)
         
         let dict: [String: Any?] = ["pathPhoto": imagePath]
         RealmService.shared.update(building, with: dict)
     }
-
+    
 }

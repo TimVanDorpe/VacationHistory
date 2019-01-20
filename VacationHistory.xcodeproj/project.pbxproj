@@ -27,6 +27,12 @@
 		E24B65142129C54C009DC702 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65132129C54C009DC702 /* LocationController.swift */; };
 		E24B65162129C577009DC702 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65152129C577009DC702 /* DetailsViewController.swift */; };
 		E24B65182129C5A3009DC702 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24B65172129C5A3009DC702 /* TableViewController.swift */; };
+		E28DAB3721F4ECDF00422FC9 /* EdditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28DAB3621F4ECDF00422FC9 /* EdditsViewController.swift */; };
+		E28DAB3D21F4FBA700422FC9 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = E28DAB3C21F4FBA700422FC9 /* noimage.png */; };
+		E28DAB3E21F4FD9800422FC9 /* edit-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E28DAB3B21F4FB0A00422FC9 /* edit-icon.jpg */; };
+		E28DAB4021F50B8300422FC9 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28DAB3F21F50B8300422FC9 /* RatingController.swift */; };
+		E28DAB4421F50C4A00422FC9 /* starfill.png in Resources */ = {isa = PBXBuildFile; fileRef = E28DAB4221F50C4A00422FC9 /* starfill.png */; };
+		E28DAB4521F50C4A00422FC9 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = E28DAB4321F50C4A00422FC9 /* star.png */; };
 		E2DE897D21BED75B00DB2FE8 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */; };
 		E2DE898321C560FA00DB2FE8 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */; };
 		E2F22403212DACA100E263A2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F22404212DACA100E263A2 /* RealmSwift.framework */; };
@@ -83,6 +89,12 @@
 		E24B65132129C54C009DC702 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		E24B65152129C577009DC702 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E24B65172129C5A3009DC702 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E28DAB3621F4ECDF00422FC9 /* EdditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdditsViewController.swift; sourceTree = "<group>"; };
+		E28DAB3B21F4FB0A00422FC9 /* edit-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "edit-icon.jpg"; sourceTree = "<group>"; };
+		E28DAB3C21F4FBA700422FC9 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../../noimage.png; sourceTree = "<group>"; };
+		E28DAB3F21F50B8300422FC9 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		E28DAB4221F50C4A00422FC9 /* starfill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starfill.png; path = ../../../starfill.png; sourceTree = "<group>"; };
+		E28DAB4321F50C4A00422FC9 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = ../../../star.png; sourceTree = "<group>"; };
 		E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		E2F22404212DACA100E263A2 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,13 +173,14 @@
 		E24B64D82129BC5C009DC702 /* VacationHistory */ = {
 			isa = PBXGroup;
 			children = (
+				E28DAB3A21F4FB0300422FC9 /* pictures */,
 				E2F22409212DBB8600E263A2 /* persistentie */,
 				E24B650E2129C4C0009DC702 /* models */,
 				E24B650D2129C4B4009DC702 /* controllers */,
 				E24B64D92129BC5C009DC702 /* AppDelegate.swift */,
 				E24B64DB2129BC5C009DC702 /* ViewController.swift */,
+				E28DAB4121F50BA100422FC9 /* unused */,
 				E24B64DD2129BC5C009DC702 /* Main.storyboard */,
-				E201E48E21394E7100386473 /* AlertService.swift */,
 				E24B64E02129BC5C009DC702 /* Assets.xcassets */,
 				E24B64E22129BC5C009DC702 /* LaunchScreen.storyboard */,
 				E24B64E52129BC5C009DC702 /* Info.plist */,
@@ -214,9 +227,10 @@
 				E24B65152129C577009DC702 /* DetailsViewController.swift */,
 				E24B65172129C5A3009DC702 /* TableViewController.swift */,
 				E21A3970216E2F4300F3DC9E /* ListDetailViewController.swift */,
-				E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */,
 				E2DE898221C560FA00DB2FE8 /* AddPhotoViewController.swift */,
 				E21D6EB421CD314400FA160D /* CollectionViewController.swift */,
+				E28DAB3621F4ECDF00422FC9 /* EdditsViewController.swift */,
+				E28DAB3F21F50B8300422FC9 /* RatingController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -229,6 +243,26 @@
 				E2F2240A212DCC1600E263A2 /* DVCell.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		E28DAB3A21F4FB0300422FC9 /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+				E28DAB4321F50C4A00422FC9 /* star.png */,
+				E28DAB4221F50C4A00422FC9 /* starfill.png */,
+				E28DAB3C21F4FBA700422FC9 /* noimage.png */,
+				E28DAB3B21F4FB0A00422FC9 /* edit-icon.jpg */,
+			);
+			path = pictures;
+			sourceTree = "<group>";
+		};
+		E28DAB4121F50BA100422FC9 /* unused */ = {
+			isa = PBXGroup;
+			children = (
+				E201E48E21394E7100386473 /* AlertService.swift */,
+				E2DE897C21BED75B00DB2FE8 /* GalleryViewController.swift */,
+			);
+			path = unused;
 			sourceTree = "<group>";
 		};
 		E2F22409212DBB8600E263A2 /* persistentie */ = {
@@ -358,8 +392,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28DAB4421F50C4A00422FC9 /* starfill.png in Resources */,
 				E24B64E42129BC5C009DC702 /* LaunchScreen.storyboard in Resources */,
 				E24B64E12129BC5C009DC702 /* Assets.xcassets in Resources */,
+				E28DAB3E21F4FD9800422FC9 /* edit-icon.jpg in Resources */,
+				E28DAB4521F50C4A00422FC9 /* star.png in Resources */,
+				E28DAB3D21F4FBA700422FC9 /* noimage.png in Resources */,
 				E24B64DF2129BC5C009DC702 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +500,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28DAB3721F4ECDF00422FC9 /* EdditsViewController.swift in Sources */,
 				E201E48F21394E7100386473 /* AlertService.swift in Sources */,
+				E28DAB4021F50B8300422FC9 /* RatingController.swift in Sources */,
 				E24B65102129C4D5009DC702 /* MapPin.swift in Sources */,
 				E24B65182129C5A3009DC702 /* TableViewController.swift in Sources */,
 				E21A3971216E2F4300F3DC9E /* ListDetailViewController.swift in Sources */,

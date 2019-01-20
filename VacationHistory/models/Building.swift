@@ -20,13 +20,6 @@ import RealmSwift
     dynamic var rating : Int = 0
     dynamic var pathPhoto : String = ""
     
-    /*convenience init(name:String, desscription:String, latitude:Double , longitude:Double) {
-        self.init()
-        self.name = name
-        self.desscription = desscription
-        self.longitude = longitude
-        self.latitude = latitude
-    }*/
     convenience init(name:String, desscription:String, latitude:Double , longitude:Double) {
         self.init()
         self.name = name
@@ -53,10 +46,13 @@ import RealmSwift
         let day = components.day
         let hour = components.hour
         let minute = components.minute
-        let second = components.second
+        _ = components.second
         
-        let today_string = String(year!) + "-" + String(month!) + "-" + String(day!) + " " + String(hour!)  + ":" + String(minute!) + ":" +  String(second!)
+        let today_string = String(day!) + "/" + String(month!) + "/" + String(year!) + " at " +
+            String(hour!)  + ":" + String(minute!)
+       
         print(today_string)
+        
         return today_string
         
     }
