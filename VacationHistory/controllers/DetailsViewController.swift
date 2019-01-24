@@ -40,8 +40,9 @@ class DetailsViewController:UIViewController{
         //Hier haal ik de data uit de textfields
         let nameString:String = nameField.text!
         let descriptionString:String = descfield.text!
-        warning.textColor = UIColor.red        
-        if(nameString != ""){
+        warning.textColor = UIColor.red
+        let rating = ratingStackView.starsRating
+        if(nameString != "" && rating != 0){
          let newMapPin:MapPin = MapPin(title: nameString , subtitle: descriptionString , coordinate:CLLocationCoordinate2DMake(CLLocationDegrees(LocationController.currentLocation?.coordinate.latitude ?? 0),CLLocationDegrees(LocationController.currentLocation?.coordinate.longitude ?? 0)))
             //add the mappin to the map
             NotificationCenter.default.post(name : BuildingsController.BUILDING_ADDED_NOTIFICATION , object: newMapPin)
@@ -53,7 +54,7 @@ class DetailsViewController:UIViewController{
             self.dismiss(animated: true, completion: nil)
         }
         else{
-            self.warning.text = "You have to fill in the name of the building"
+            self.warning.text = "Rating and name are required !"
             //
         }
     }

@@ -32,7 +32,7 @@ public class ViewController: UIViewController {
             //handle error
             print(error ?? "no error detected")
         }
-        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         NotificationCenter.default.addObserver(forName: BuildingsController.BUILDING_ADDED_NOTIFICATION, object: nil , queue: nil){notification in
             let newBuildingPin:MapPin = notification.object as! MapPin
             self.mapView.addAnnotation(newBuildingPin)
@@ -46,9 +46,9 @@ public class ViewController: UIViewController {
             }
         
         //de map wordt overzichtelijker , 2000 span instellen
-        let distanceSpan:CLLocationDegrees = 400000
-        //let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
-        let startLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(51.05), CLLocationDegrees(3.7167))
+        let distanceSpan:CLLocationDegrees = 20000
+        let startLocation:CLLocationCoordinate2D = LocationController.deviceLocation()
+        //let startLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(51.05), CLLocationDegrees(3.7167))
         
             mapView.setRegion(MKCoordinateRegion.init(center: startLocation, latitudinalMeters: distanceSpan, longitudinalMeters: distanceSpan), animated: true)
         
@@ -58,6 +58,7 @@ public class ViewController: UIViewController {
         super.viewWillAppear(animated)
         mapView.reloadInputViews()
         self.viewDidLoad()
+        
         
     }
    
